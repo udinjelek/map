@@ -1,0 +1,112 @@
+<div class="linear-background01">
+    <a class="btn color-btn m-4" href="/">Back to Home</a>
+    <div class="container pt-5 pb-5">
+        <h1>Devlog: Web Scraping with Selenium for Price Monitoring</h1>
+        
+        <section class="mt-4">
+          <h2>Introduction</h2>
+          <p>I have often found myself wanting to monitor the prices of items I wish to buy from an e-commerce websites. Checking these prices manually every day can be time-consuming and inefficient. I frequently encounter the same items, shops, and prices that I saw the day before, making it difficult to spot new or discounted items. Additionally, sponsored items that are not relevant to my search can clutter the results.</p>
+        </section>
+        
+        <section class="mt-4">
+          <h3>The Challenge</h3>
+          <ul>
+            <li><strong>Repetitive Items:</strong> Encountering the same items, shops, and prices repeatedly.</li>
+            <li><strong>Difficulty Identifying New Items:</strong> Hard to distinguish new listings from old ones.</li>
+            <li><strong>Irrelevant Sponsored Items:</strong> Sponsored items that do not match my search criteria.</li>
+          </ul>
+        </section>
+        
+        <section class="mt-4">
+          <h3>The Solution</h3>
+          <p>To streamline this process, I decided to use Selenium for web scraping. The plan is to:</p>
+          <ul>
+            <li><strong>Scrape Data:</strong> Use Selenium to scrape data from all pages of interest and save it into a CSV file.</li>
+            <li><strong>Database Import:</strong> Import the CSV data into a database.</li>
+            <li><strong>Create Web Application:</strong> Develop a front-end and back-end web application for personal use, which will:
+              <ul>
+                <li>Query and display unique items based on a combination of shop name, product title, and price.</li>
+                <li>Allow me to mark items as "not interested," ensuring these items will not appear in future searches even if they are scraped again.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <hr>
+        <section class="mt-4">
+          <h1>Chapter 1: Web Scraping with Selenium</h1>
+          <p>For now, we will focus on the first part of the project: web scraping using Selenium.</p>
+          <p>Setting Up Selenium</p>
+          <ol>
+            <li><strong>Install Selenium:</strong> Install the Selenium package using pip 
+              <pre>pip install selenium</pre>
+            </li>
+
+            <li><strong>Download WebDriver:</strong> Download the appropriate WebDriver for your browser (e.g., ChromeDriver for Google Chrome).</li>
+          </ol>
+          <h3>Analyze the website</h3>
+          <p>I started by analyzing a website I wanted to use. In this case, I chose Tokopedia, a popular marketplace where I have previously made purchases.</p>
+
+          <h3>Input and Output</h3>
+          <ul>
+            <li>**Inputs:**
+              <ul>
+                <li>`search_key`: This will be the keyword used for searching on Tokopedia.</li>
+                <li>`min_price`: The minimum price range for the search.</li>
+                <li>`max_price`: The maximum price range for the search.</li>
+              </ul>
+            </li>
+            <li>**Outputs:**
+              <ul>
+                <li>`search_key`: The search keyword used (same as input).</li>
+                <li>`min_price`: The minimum price range used (same as input).</li>
+                <li>`max_price`: The maximum price range used (same as input).</li>
+                <li>`page`: The current page number of the search results.</li>
+                <li>`no_item`: The total number of items found in the search.</li>
+                <li>`shop_name`: The name of the shop selling the product.</li>
+                <li>`shop_loc`: The location of the shop selling the product.</li>
+                <li>`product_rating`: The average rating of the product. (may not be available for all cases)</li>
+                <li>`product_sales`: The number of times the product has been sold. (may not be available for all shops)</li>
+                <li>`product_name`: The name of the product.</li>
+                <li>`product_price`: The price of the product.</li>
+                <li>`product_link`: The link to the product page on Tokopedia.</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3>Data Extraction Strategy</h3>
+          <p>After learning about HTTP requests (queries) and inspecting the website, I determined the input format for the Tokopedia search query. The format looks like this:</p>
+
+          <pre><code>https://www.tokopedia.com/search?pmax=21000000&pmin=5000000&q=Lenovo%20LOQ%2015AHP9&page=1</code></pre>
+
+          <p>In this example, `q` represents the search keyword, `pmax` is the maximum price, and `pmin` is the minimum price.  `page` indicates the current page of search results.</p>
+
+          <p>For the output data, I used browser developer tools to inspect the elements and identify the class names used to display the desired information (product name, price, shop name, etc.).</p>
+
+          <div class="container-code">
+            <pre><code>
+              {{pythoncode}}
+            </code></pre>
+          </div>
+
+          <p>**Note:** Web scraping can be against the terms of service for some websites. Make sure you understand and respect Tokopedia's terms before proceeding.</p>
+          
+          <p>When you run the Python script, it will automatically open a Chrome browser window. This ensures that all items on the target webpage are loaded before scraping begins. After a short delay to allow for loading, the Chrome window will close.</p>
+
+          <p>The script will also create a new CSV file in the same folder as the Python script. This file will contain the scraped data.</p>
+
+          <h3>Sample Data</h3>
+
+          <pre>
+          'search_key' : 'Lenovo LOQ 15AHP9',
+          'min_price' : 5000000,
+          'max_price' : 21000000
+          </pre>
+
+          <p>As of May 23, 2024, this script is expected to generate approximately 164 data, split across two webpages: 85 items on the first page and 79 items on the second page.</p>
+          <h1></h1>
+          <h2>-- Finished --</h2>
+          <hr>  
+        </section>
+      </div>
+      
+</div>

@@ -1,0 +1,32 @@
+/* src/styles.css */
+pre {
+    position: relative;
+    background-color: #282c34;  /* Black background */
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  
+  pre button {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  
+  pre button:hover {
+    opacity: 1;
+  }
+  
+.container-code{
+  width: 80%;
+  margin: 0 auto;
+}
+
+pre{
+  max-height: 500px;
+}
+
+.color-btn{
+  
+  border: 2px solid #d6d2ee;
+  color: #d6d2ee;
+}

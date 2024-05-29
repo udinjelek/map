@@ -1,0 +1,135 @@
+
+.color-text-second{
+    color: #54637c;
+    // color:red;
+}
+.project{
+  p{
+    color: #adb7e9;  
+  }
+}
+
+.color-text-mid{
+  color: #adb7e9;
+  // color:red;
+}
+
+.header-web{
+    top: 0; 
+    height: 100vh; 
+    width: 50%; 
+    padding-top: 40px ;
+}
+
+.main-web{
+    width: 50%;
+    padding-top: 40px ;
+}
+
+.project{
+  padding-top: 20px ;
+  padding-bottom: 60px ;
+}
+
+.img-container {
+  margin-top: 30px;
+  height: 300px;
+
+  .position-relative {
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover; /* This ensures the image covers the entire container */
+  }
+
+}
+
+.img-container-mobile {
+  margin-top: 30px;
+  height: 240px;
+
+  .position-relative {
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover; /* This ensures the image covers the entire container */
+  }
+
+}
+
+
+.height-desc{
+  height: 30px;
+}
+
+
+
+.sticky-nav {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 135px; /* Adjust width as needed */
+  height: 100%;
+  
+  padding: 10px 10px 10px 0px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sticky-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sticky-nav li {
+  margin: 0;
+}
+
+.nav-button {
+  display: block;
+  padding: 0px 15px;
+  margin-right:15px;
+  background-color: #1d5c9f; /* Button background color */
+  // background-color: linear-gradient(to bottom right, #9d4515 , #ce7303 );
+  color: #d6d2ee;
+  text-align: left;
+  text-decoration: none;
+  // border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-button-active{
+  background-color: #9f1d1d; /* Button background color */
+  color:#e4aeae;
+  display: block;
+  padding: 0px 15px;
+  margin-right:0px;
+  text-align: left;
+  text-decoration: none;
+  // border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-button-active:hover {
+  background-color: #ff4677; /* Hover background color */
+  color: #000000
+}
+
+.nav-button:hover {
+  background-color: #57a8ff; /* Hover background color */
+  color: #000000
+}
+
+a{
+  color: inherit;
+  text-decoration: none;  /* Remove underline */
+}
+
+.link{
+  color:#ff4677;
+}

@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+ @import "bootstrap/dist/css/bootstrap.min.css";
+ @import 'bootstrap-icons/font/bootstrap-icons.css';
+ body {
+    // font-family: 'Roboto', sans-serif; /* Default font set to Roboto */
+    font-family: Arial, sans-serif;
+    color: #e6e6e6;
+    background-color: rgba(255, 255, 255, 0.0); /* White with 50% opacity */
+    background-size: auto;
+   
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .linear-background01{
+    // background: linear-gradient(to bottom right, #102a44 , #15395b );
+    background: linear-gradient(to bottom right, #050b10 , #15395b );
+}

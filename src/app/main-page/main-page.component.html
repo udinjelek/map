@@ -1,0 +1,242 @@
+<!-- <button class="btn btn-danger"> Delete</button> -->
+<div class="linear-background01">
+
+    <div class=" mx-auto d-flex flex-column justify-content-center align-items-center" style="max-width: 1000px; ">
+        <body [ngClass]="{'d-flex justify-between gap-4': !isPhoneMode ,
+                         'm-3':isPhoneMode}">
+            <header [ngClass]="{'sticky-top d-flex flex-column justify-between py-6 py-lg-24 header-web': !isPhoneMode,
+                         'pt-3 project':isPhoneMode}">
+                <div [ngClass]="{'container': !isPhoneMode,
+                                'p-0': isPhoneMode}">
+                    <!-- <p class="mb-1">Fullstack Engineer</p> -->
+                    <h5>Fullstack Engineer &#x2022; <span class="color-text-second">Enthusiastic Programmer</span></h5>
+                    <h1>Rizaq Gani P</h1>
+                    <h5 class="color-text-second">Every line of code is a step in solving a puzzle that only you can see</h5>
+                    <div [ngClass]="{'img-container': !isPhoneMode ,
+                                     'd-none': isPhoneMode}">
+                        <div class="position-relative h-100" *ngIf="currentPhotoUrl">
+                          <button class="btn btn-primary position-absolute top-50 start-0 translate-middle-y" (click)="previousImage()">
+                            &#10094; <!-- Left arrow icon -->
+                          </button>
+                          <img src="{{ currentPhotoUrl }}" class="img-fluid w-100 h-100" alt="Image description">
+                          <button class="btn btn-primary position-absolute top-50 end-0 translate-middle-y" (click)="nextImage()">
+                            &#10095; <!-- Right arrow icon -->
+                          </button>
+                        </div>
+                    </div>
+                    <div ngClass="{'height-desc' : !isPhoneMode ,
+                                    'd-none': isPhoneMode}">
+                        <span>{{currentPhotoDescription}}</span>
+                    </div>
+
+                    <section id="contact" class="mt-3">
+                        <h4>Contact :
+                            <span class="m-2">
+                                <a href="https://www.linkedin.com/in/rizaq/" target="_blank">
+                                    <i class="bi bi-linkedin"></i>
+                                </a> 
+                            </span>
+                            <span class="m-2">
+                                <a href="mailto:ganip.xra@gmail.com" target="_blank">
+                                    <i class="bi bi-envelope"></i>
+                                </a>
+                            </span>
+                        </h4> 
+                        <!-- <p>Email: ganip.xra&#64;gmail.com <br>
+                           Phone: xxx xxx xxx xxxx</p> -->
+                    </section>
+
+                    
+                    <nav class="sticky-nav" *ngIf="!isPhoneMode">
+                        <ul>
+                          <li><a ngxPageScroll href="#about"    
+                                [ngClass]="{'nav-button':activeSelection!=='about' , 
+                                            'nav-button-active':activeSelection==='about'}"
+                                (click)="updateActiveSelection('about')">About</a></li>
+                          <li><a ngxPageScroll href="#project1" 
+                                [ngClass]="{'nav-button':activeSelection!=='project1' , 
+                                'nav-button-active':activeSelection==='project1'}"
+                                (click)="updateActiveSelection('project1')">Project 01</a></li>
+                          <li><a ngxPageScroll href="#project2" 
+                                [ngClass]="{'nav-button':activeSelection!=='project2' , 
+                                'nav-button-active':activeSelection==='project2'}"
+                                (click)="updateActiveSelection('project2')">Project 02</a></li>
+                          <li><a ngxPageScroll href="#project3" 
+                                [ngClass]="{'nav-button':activeSelection!=='project3' , 
+                                'nav-button-active':activeSelection==='project3'}"
+                                (click)="updateActiveSelection('project3')">Project 03</a></li>
+                          <li><a ngxPageScroll href="#project4" 
+                                [ngClass]="{'nav-button':activeSelection!=='project4' , 
+                                'nav-button-active':activeSelection==='project4'}"
+                                (click)="updateActiveSelection('project4')">Project 04</a></li>
+                          <li><a ngxPageScroll href="#project5" 
+                                [ngClass]="{'nav-button':activeSelection!=='project5' , 
+                                'nav-button-active':activeSelection==='project5'}"
+                                (click)="updateActiveSelection('project5')">Project 05</a></li>
+                        </ul>
+                    </nav>
+                    
+                </div>
+            </header>
+ 
+            <main [ngClass]="{'pt-6 pt-lg-24 d-flex flex-column justify-content-between main-web': !isPhoneMode,
+                              'pt-1': isPhoneMode}">
+                <section id="about" class="project" (mouseover)="updateActiveOnHover('about')">
+                    <h2>About Me</h2>
+                    <p>In 2010, I started my career in the telecommunications industry as a 'Tools Maker', creating programs to collect data, generate reports, and develop automation tools. 
+                    In 2022, I transitioned to a full-stack developer role at different Company, where I build dynamic websites to support the HR team.
+                    </p>
+                    <!-- <p>In 2010, I began my career in telecommunications as a 'Tools Maker,' creating data collection programs and automation tools. 
+                        In 2022, I transitioned to a full-stack developer role, building dynamic websites to support the HR team.
+                    </p> -->
+                    <p>My focus now is on crafting accessible and efficient software that balances design and engineering.
+                    </p> 
+                    <p>When I am not working, I enjoy spending time with my family, drawing, and enhancing my logic programming skills by making games, which often require complex logic and creativity.
+                    </p> 
+                    
+                    
+                </section>
+                
+                <section id="project1" class="project" (mouseover)="updateActiveOnHover('project1')">
+                    <h2>Personal Project</h2>
+                    <div>
+                        <h4>Customer Chat App</h4>
+                        <div [ngClass]="{'d-none': !isPhoneMode ,
+                                        'img-container-mobile': isPhoneMode}">
+                            <div class="position-relative h-100">
+                            <button class="btn btn-primary position-absolute top-50 start-0 translate-middle-y" (click)="previousImage_link(0)">
+                                &#10094; <!-- Left arrow icon -->
+                            </button>
+                            <img src="{{ currentPhotoUrl_link[0] }}" class="img-fluid w-100 h-100" alt="Image description">
+                            <button class="btn btn-primary position-absolute top-50 end-0 translate-middle-y" (click)="nextImage_link(0)">
+                                &#10095; <!-- Right arrow icon -->
+                            </button>
+                            </div>
+                        </div>
+                        <div ngClass="height-desc text-end color-text-second" *ngIf=" isPhoneMode">
+                            <span>{{currentPhotoDescription_link[0]}}</span>
+                        </div>
+                        <p>n Care Chat is a super handy chat app I built for customer care purpose. 
+                            It works great on both laptops and phones, so you can chat with support anytime, anywhere. 
+                            The app is responsive and easy to use, making customer service fast and efficient. 
+                            Plus, you can attach images and files, making it even more versatile</p>
+                        <p>Care Chat utilizes Angular for the frontend, Flask for the backend, and websocket technology for real-time communication. 
+                            SQLite serves as the database, ensuring efficient data management for fast and versatile customer support.</p>
+                    </div>
+                </section>
+                <section id="project2" class="project" (mouseover)="updateActiveOnHover('project2')">
+                    <div>
+                        <h4>Telegram File Converter Bot</h4>
+                        <div [ngClass]="{'d-none': !isPhoneMode ,
+                                        'img-container-mobile': isPhoneMode}">
+                            <div class="position-relative h-100">
+                            <button class="btn btn-primary position-absolute top-50 start-0 translate-middle-y" (click)="previousImage_link(1)">
+                                &#10094; <!-- Left arrow icon -->
+                            </button>
+                            <img src="{{ currentPhotoUrl_link[1] }}" class="img-fluid w-100 h-100" alt="Image description">
+                            <button class="btn btn-primary position-absolute top-50 end-0 translate-middle-y" (click)="nextImage_link(1)">
+                                &#10095; <!-- Right arrow icon -->
+                            </button>
+                            </div>
+                        </div>
+                        <div ngClass="height-desc text-end color-text-second" *ngIf=" isPhoneMode">
+                            <span>{{currentPhotoDescription_link[1]}}</span>
+                        </div>
+                        <p>The Telegram File Converter Bot is a practical tool I developed to simplify the conversion of HTML data tables into readable CSV files. 
+                            Designed for ease of use, this bot operates within Telegram to prevent the need for additional software installation. 
+                            It supports seamless data handling, making it perfect for database imports and Excel tasks like VLOOKUP. </p>
+                        <p>Powered by Python, the bot ensures efficient and accurate data conversion while keeping track of user interactions.</p>
+                    </div>
+                </section>
+                <section id="project3" class="project" (mouseover)="updateActiveOnHover('project3')">
+                    <div>
+                        <h4>Greeting Cards App</h4>
+                        <div [ngClass]="{'d-none': !isPhoneMode ,
+                                        'img-container-mobile': isPhoneMode}">
+                            <div class="position-relative h-100">
+                            <button class="btn btn-primary position-absolute top-50 start-0 translate-middle-y" (click)="previousImage_link(2)">
+                                &#10094; <!-- Left arrow icon -->
+                            </button>
+                            <img src="{{ currentPhotoUrl_link[2] }}" class="img-fluid w-100 h-100" alt="Image description">
+                            <button class="btn btn-primary position-absolute top-50 end-0 translate-middle-y" (click)="nextImage_link(2)">
+                                &#10095; <!-- Right arrow icon -->
+                            </button>
+                            </div>
+                        </div>
+                        <div ngClass="height-desc text-end color-text-second" *ngIf=" isPhoneMode">
+                            <span>{{currentPhotoDescription_link[2]}}</span>
+                        </div>
+                        <p>The Greeting Cards App is a creative solution I developed to make sending holiday messages more enjoyable and personalized. 
+                            Instead of plain text messages, this app allows me to choose from various templates tailored that I made before for different recipients, whether it is my boss, colleagues, friends, or family. 
+                            Each template can be customized with the recipient's name through a simple URL modification, ensuring a personal touch while keeping the process quick and easy.</p>
+                        <p>All the artwork is vector-based and created by me with Inkscape. The programming is done using Angular with TypeScript.</p>
+                    </div>
+                </section>
+                <section id="project4" class="project" (mouseover)="updateActiveOnHover('project4')" >
+                    <div>
+                        
+                    </div>
+                    <div>
+                        <h4>Puzzle Connection Game</h4>
+                        <div [ngClass]="{'d-none': !isPhoneMode ,
+                                        'img-container-mobile': isPhoneMode}">
+                            <div class="position-relative h-100">
+                            <button class="btn btn-primary position-absolute top-50 start-0 translate-middle-y" (click)="previousImage_link(3)">
+                                &#10094; <!-- Left arrow icon -->
+                            </button>
+                            <img src="{{ currentPhotoUrl_link[3] }}" class="img-fluid w-100 h-100" alt="Image description">
+                            <button class="btn btn-primary position-absolute top-50 end-0 translate-middle-y" (click)="nextImage_link(3)">
+                                &#10095; <!-- Right arrow icon -->
+                            </button>
+                            </div>
+                        </div>
+                        <div ngClass="height-desc text-end color-text-second" *ngIf=" isPhoneMode">
+                            <span>{{currentPhotoDescription_link[3]}}</span>
+                        </div>
+                        <p> Sometimes I need to hone my programming skills and satisfy my desire to solve logic challenges. 
+                            That is why I created Game. 
+                            Making games often requires complex logic, involving various algorithms and mathematical calculations that are rarely encountered in full-stack development. 
+                            This game serves as a fun and engaging way to improve those skills.</p>
+                        <p>The Game features a captivating narrative with character dialogues that lead to a choice-driven ending.</p>
+                        <p>Inspired by Onet, The game throws in some twists and additional mechanics that demand strategic thinking to solve the puzzles.</p>
+                        <p>The drawings are raster-based,  created entirely by me in Krita, add a unique visual style.
+                            The game engine used is Godot, with GDScript as the language of choice.</p>
+                    </div>
+                </section>
+                <section id="project5" class="project" (mouseover)="updateActiveOnHover('project5')" >
+                    <div>
+                        
+                    </div>
+                    <div>
+                        <h4>Web Scraping with Selenium</h4>
+                        <div [ngClass]="{'d-none': !isPhoneMode ,
+                                        'img-container-mobile': isPhoneMode}">
+                            <div class="position-relative h-100">
+                            <button class="btn btn-primary position-absolute top-50 start-0 translate-middle-y" (click)="previousImage_link(4)">
+                                &#10094; <!-- Left arrow icon -->
+                            </button>
+                            <img src="{{ currentPhotoUrl_link[4] }}" class="img-fluid w-100 h-100" alt="Image description">
+                            <button class="btn btn-primary position-absolute top-50 end-0 translate-middle-y" (click)="nextImage_link(4)">
+                                &#10095; <!-- Right arrow icon -->
+                            </button>
+                            </div>
+                        </div>
+                        <div ngClass="height-desc text-end color-text-second" *ngIf=" isPhoneMode">
+                            <span>{{currentPhotoDescription_link[4]}}</span>
+                        </div>
+                        <p>To make the process of monitoring prices on e-commerce websites more efficient, 
+                            I have developed a web scrapping with selenium which is a tool that automates daily prices checks. 
+                            This part captures from multiple pages and saves it to a CSV file,  
+                            making it easier to keep track of price changes and new listings.</p>
+                        
+                        <p><a class="link" routerLink="/devlog-selenium">
+                            Learn more about my devlog on Web Scraping with Selenium
+                        </a></p>
+                    </div>
+                </section>
+                
+                
+            </main>
+        </body>
+    </div>
+</div>
