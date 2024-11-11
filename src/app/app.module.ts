@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import { DevlogSeleniumComponent } from './devlog-selenium/devlog-selenium.component';
+import { MapComponent } from './map/map.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
     DevlogSeleniumComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,

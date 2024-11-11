@@ -7,5 +7,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-portfolio-app';
+  title = 'map-test';
 }

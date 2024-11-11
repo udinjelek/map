@@ -1,0 +1,45 @@
+.map-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.main{
+    overflow-y: hidden; // hide vertical
+    overflow-x: hidden; // hide horizontal
+    margin: 0;
+    padding: 0;
+}
+
+.backgroundLinear{
+    background-image: linear-gradient(to bottom right, rgb(26, 79, 148), rgb(2, 35, 92));
+    
+    color:beige;
+}
+
+.backgroundPurple{
+    background-color: #401892;
+    color:beige;
+} 
+
+.backgroundDark{
+    background-color:#212529;
+    color:#DEE2E6;
+
+}
+
+.btn-main-menu{
+    border-color: beige;
+    border-width: 2px;
+    
+    color:beige;
+}
+
+.menuActive{
+    background-color: #5b27c2;
+    color:beige;
+}
+
+.unselectMenu{
+    background-color: #5b27c2;
+    color:beige;
+}
